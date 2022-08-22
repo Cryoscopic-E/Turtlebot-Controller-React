@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
 class Header extends Component {
   state = {};
@@ -16,6 +16,7 @@ class Header extends Component {
                 <Nav.Link href="/about">About</Nav.Link>
               </Nav>
             </Navbar.Collapse>
+            <Button>Toggle Theme</Button>
           </Container>
         </Navbar>
       </Container>

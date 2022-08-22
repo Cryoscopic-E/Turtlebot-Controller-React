@@ -58,17 +58,16 @@ class Teleoperation extends Component {
 
     const twist = new window.ROSLIB.Message({
       linear: {
-        x: e.y / 50,
+        x: e.y / 100,
         y: 0,
         z: 0,
       },
       angular: {
         x: 0,
         y: 0,
-        z: -e.x / 50,
+        z: -e.x / 100,
       },
     });
-
     cmd_vel.publish(twist);
   }
 
