@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Connection from "./Connection";
 import Teleoperation from "./Teleoperation";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 class Home extends Component {
   state = {};
