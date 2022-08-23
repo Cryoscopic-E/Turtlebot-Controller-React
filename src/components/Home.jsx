@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Connection from "./Connection";
 import Teleoperation from "./Teleoperation";
+import RobotState from "./RobotState";
 import { Row, Col, Container } from "react-bootstrap";
 
 class Home extends Component {
@@ -19,6 +20,14 @@ class Home extends Component {
           <Row>
             <Col>
               <Teleoperation />
+            </Col>
+            <Col>
+              <h1>MAP FUTURE</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <RobotState />
             </Col>
           </Row>
         </Container>
