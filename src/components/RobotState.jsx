@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { Card, ListGroup, Badge } from "react-bootstrap";
-import ROSLIB from "roslib";
 import Config from "../scripts/config";
 
 class RobotState extends Component {
@@ -15,7 +14,7 @@ class RobotState extends Component {
 
     constructor() {
         super();
-        this.state.ros = new ROSLIB.Ros();
+        this.state.ros = new window.ROSLIB.Ros();
         try {
             this.state.ros.connect(
                 `ws://${Config.ROSBRIDGE_IP_SERVER}:${Config.ROSBRIDGE_SERVER_PORT}`
@@ -32,7 +31,7 @@ class RobotState extends Component {
     }
 
     robotPosition() {
-        const pos_subscriber = new ROSLIB.Topic({
+        const pos_subscriber = new window.ROSLIB.Topic({
             ros: this.state.ros,
             name: Config.POSITION_TOPIC,
             messageType: Config.POSITION_MSG
@@ -54,7 +53,7 @@ class RobotState extends Component {
     }
 
     robotVelocity() {
-        const vel_subscriber = new ROSLIB.Topic({
+        const vel_subscriber = new window.ROSLIB.Topic({
             ros: this.state.ros,
             name: Config.VELOCITY_TOPIC,
             messageType: Config.VELOCITY_MSG
@@ -72,7 +71,7 @@ class RobotState extends Component {
 
     render() {
         return (
-            <Card className="mt-5" style={{ width: '18rem' }}>
+            <Card className="mt-4">
                 <Card.Header className="lead">Position</Card.Header>
                 <ListGroup variant="flush">
                     <ListGroup.Item>X: <Badge bg="light" text="dark">

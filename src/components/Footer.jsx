@@ -4,7 +4,7 @@ class Footer extends Component {
   state = {};
   render() {
     return (
-      <Container>
+      <Container className="mt-5">
         <p className="text-center">CryoLabs &copy; 2022</p>
       </Container>
     );

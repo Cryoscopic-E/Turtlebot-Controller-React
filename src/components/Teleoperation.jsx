@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Joystick } from "react-joystick-component";
+import { Joystick, } from "react-joystick-component";
 import Config from "../scripts/config";
+import { Card, Button } from "react-bootstrap"
 
 class Teleoperation extends Component {
   state = {
@@ -94,17 +95,47 @@ class Teleoperation extends Component {
     cmd_vel.publish(twist);
   }
 
+  joyOptions = {
+    mode: 'semi',
+    catchDistance: 600,
+    color: 'white'
+  }
+
+  containerStyle = {
+    border: "5px solid #c3c3c3",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+    background: 'linear-gradient(to left, #E684AE, #12DACA, #77F3D3)'
+  }
+
+  divStyle={
+    marginInLine: "auto"
+  }
+
   render() {
     return (
-      <div>
-        <Joystick
-          size={100}
-          baseColor="lightgray"
-          stickColor="gray"
-          move={this.handleMove}
-          stop={this.handleStop}
-        ></Joystick>
-      </div>
+
+      <Card className="text-center" style={{ width: '12rem' }}>
+        <Card.Header className="lead mb-4">Control</Card.Header>
+        <div className="card-body">
+          <div id="joy-container">
+          <Joystick
+          className="dwwf"
+          style={this.divStyle}
+            size={100}
+            baseColor="lightgray"
+            stickColor="gray"
+            move={this.handleMove}
+            stop={this.handleStop}
+          ></Joystick>
+          </div>
+
+          <Button className="btn-danger mt-5">Emergency Stop</Button>
+        </div>
+      </Card>
+
+
     );
   }
 }

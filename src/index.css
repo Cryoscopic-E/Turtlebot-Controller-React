@@ -15,3 +15,11 @@ code {
 main {
   min-height: 80vh;
 }
+
+#joy-container>div{
+  margin-inline: auto;
+}
+
+#nav_container{
+  border: 6px solid darkblue
+}
